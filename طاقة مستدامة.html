@@ -1,0 +1,2719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طاقة مستدامة - الاستهلاك المسؤول للطاقة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0a7c7c;
+            --primary-dark: #066;
+            --primary-light: #2da8a8;
+            --secondary-color: #4caf50;
+            --secondary-dark: #3d8b40;
+            --secondary-light: #6fbf73;
+            --dark-color: #1a2b3c;
+            --light-color: #f5f9fa;
+            --gray-color: #8a9ba8;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .navbar,
+        body.dark-mode .tip-card,
+        body.dark-mode .podcast-player,
+        body.dark-mode .campaign-card,
+        body.dark-mode .audio-player,
+        body.dark-mode .stat-item,
+        body.dark-mode .gallery-item,
+        body.dark-mode .brochure-image,
+        body.dark-mode .game-card,
+        body.dark-mode .survey-form {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .section-header h2,
+        body.dark-mode .campaign-card h3,
+        body.dark-mode .tip-card h3,
+        body.dark-mode .about-text h2,
+        body.dark-mode .gallery-info h4,
+        body.dark-mode .brochure-content h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .hero-section {
+            background: linear-gradient(135deg, #1a2b3c 0%, #0a7c7c 100%);
+        }
+
+        body.dark-mode .campaign-section,
+        body.dark-mode .about-section,
+        body.dark-mode .posters-section,
+        body.dark-mode .brochure-long-section,
+        body.dark-mode .games-section,
+        body.dark-mode .survey-section {
+            background: #1a2b3c;
+        }
+
+        body.dark-mode .footer {
+            background: #0d1a26;
+        }
+
+        body.dark-mode .nav-link {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .nav-link:hover,
+        body.dark-mode .nav-link.active {
+            color: var(--primary-light);
+        }
+
+        body.dark-mode .podcast-description,
+        body.dark-mode .campaign-card p,
+        body.dark-mode .tip-card li,
+        body.dark-mode .about-text p,
+        body.dark-mode .gallery-info p,
+        body.dark-mode .brochure-content p,
+        body.dark-mode .quiz-option,
+        body.dark-mode .memory-card.flipped,
+        body.dark-mode .form-group label,
+        body.dark-mode .radio-group label,
+        body.dark-mode .checkbox-group label {
+            color: #b0bec5;
+        }
+
+        body.dark-mode .quiz-option {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-mode .quiz-option:hover {
+            background-color: #3a3a3a;
+        }
+
+        body.dark-mode .stat-label {
+            color: #e0e0e0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .navbar {
+            background-color: #1e1e1e;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-left: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1.2rem;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            background-color: rgba(10, 124, 124, 0.1);
+        }
+
+        .theme-toggle {
+            background: var(--gradient-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        
+        .lang-selector {
+            margin-right: 0.5rem;
+            position: relative;
+        }
+        
+        .lang-selector select {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        body.dark-mode .lang-selector select {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border-color: var(--primary-light);
+        }
+        
+        .lang-selector select option {
+            background: white;
+            color: var(--dark-color);
+        }
+        
+        body.dark-mode .lang-selector select option {
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .bar {
+            background-color: #e0e0e0;
+        }
+
+        /* القسم الرئيسي */
+        .hero-section {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(135deg, #f5f9fa 0%, #e6f2f2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-left: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(10, 124, 124, 0.2);
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(10, 124, 124, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(10, 124, 124, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .energy-visual {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        .circle-1 {
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 124, 124, 0.1);
+            top: 0;
+            right: 0;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 70%;
+            height: 70%;
+            background: rgba(76, 175, 80, 0.1);
+            top: 15%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .circle-3 {
+            width: 40%;
+            height: 40%;
+            background: rgba(45, 168, 168, 0.1);
+            top: 30%;
+            right: 30%;
+            animation-delay: 2s;
+        }
+
+        .energy-visual i {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .energy-visual i:nth-child(4) {
+            top: 20%;
+            right: 20%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .energy-visual i:nth-child(5) {
+            top: 60%;
+            right: 70%;
+            animation: float 5s infinite ease-in-out 0.5s;
+        }
+
+        .energy-visual i:nth-child(6) {
+            top: 70%;
+            right: 30%;
+            animation: float 7s infinite ease-in-out 1s;
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            width: calc(100% + 1.3px);
+            height: 70px;
+            fill: white;
+        }
+
+        body.dark-mode .wave-divider svg {
+            fill: #121212;
+        }
+
+        /* قسم البودكاست */
+        .podcast-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .section-header h2 i {
+            color: var(--primary-color);
+            margin-left: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--gray-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .podcast-player {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .podcast-cover {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 720px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f9fa;
+        }
+
+        .podcast-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .podcast-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .player-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 2rem;
+        }
+
+        .podcast-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .podcast-description {
+            color: var(--gray-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .podcast-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .podcast-meta span {
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .podcast-meta i {
+            margin-left: 0.5rem;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 30px;
+        }
+
+        /* قسم الحملة الترويجية */
+        .campaign-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f9fa 0%, #e6f2f2 100%);
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .campaign-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .campaign-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .campaign-img {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .campaign-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .campaign-card:hover .campaign-img img {
+            transform: scale(1.05);
+        }
+
+        .campaign-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .campaign-card:hover .campaign-overlay {
+            opacity: 1;
+        }
+
+        .download-btn, .share-btn {
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            border: none;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .share-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .download-btn:hover, .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .campaign-card h3 {
+            padding: 1.2rem 1.2rem 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .campaign-card p {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* قسم البوسترات */
+        .posters-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 350px;
+            background-color: #f5f9fa;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8fbfb, #e6f2f2);
+        }
+
+        .gallery-img {
+            max-width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .gallery-info h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .gallery-info p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .gallery-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: none;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .gallery-download {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .gallery-preview {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .gallery-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* قسم البرشور الطويل */
+        .brochure-long-section {
+            padding: 5rem 0;
+            background-color: #f8fbfb;
+        }
+
+        .brochure-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .brochure-image {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .brochure-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brochure-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brochure-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .brochure-content p {
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .brochure-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* نافذة معاينة الصورة */
+        .image-preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview-container {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .preview-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-preview {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: white;
+            color: var(--dark-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .close-preview:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* قسم النصائح */
+        .tips-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .tips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .tip-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: #f8fbfb;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .tip-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .tip-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .tip-card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--dark-color);
+        }
+
+        .tip-card ul {
+            list-style: none;
+            text-align: right;
+        }
+
+        .tip-card li {
+            padding: 0.5rem 0;
+            color: var(--gray-color);
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        .tip-card li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            right: 0;
+        }
+
+        /* قسم الألعاب */
+        .games-section {
+            padding: 5rem 0;
+            background-color: #f8fbfb;
+        }
+
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .game-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-option {
+            padding: 0.8rem 1rem;
+            background: #f0f7f7;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quiz-option:hover {
+            background: #d9ecec;
+        }
+
+        .quiz-option.correct {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .quiz-option.wrong {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .memory-card {
+            aspect-ratio: 1/1;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .memory-card.flipped {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(10,124,124,0.3);
+        }
+
+        .memory-card.matched {
+            background: var(--secondary-color);
+            color: white;
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        /* قسم الاستبيان */
+        .survey-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .survey-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f8fbfb;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .scale {
+            gap: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Tajawal', sans-serif;
+            resize: vertical;
+        }
+
+        /* قسم عن المبادرة */
+        .about-section {
+            padding: 5rem 0;
+            background-color: #f8fbfb;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+     
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .footer-info .logo {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-info p {
+            color: #b0bec5;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links, .footer-contact {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .footer-links ul, .footer-contact ul {
+            list-style: none;
+        }
+
+        .footer-links li, .footer-contact li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #b0bec5;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            color: #b0bec5;
+        }
+
+        .footer-contact i {
+            margin-left: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        /* الحركات والرسوم المتحركة */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 1rem 0;
+                z-index: 999;
+            }
+
+            body.dark-mode .nav-menu {
+                background-color: #1e1e1e;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .energy-visual {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .podcast-cover {
+                height: 400px;
+            }
+            
+            .campaign-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .games-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-left: 0;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .podcast-player {
+                flex-direction: column;
+            }
+            
+            .podcast-cover {
+                height: 300px;
+                min-width: 100%;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .brochure-container {
+                flex-direction: column;
+            }
+            
+            .brochure-image {
+                height: 400px;
+            }
+
+            .memory-game {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .podcast-cover {
+                height: 250px;
+            }
+
+            .memory-game {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span data-i18n="logo">طاقة مستدامة</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-i18n="nav_home">الرئيسية</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav_about">عن المبادرة</a></li>
+                <li><a href="#podcast" class="nav-link" data-i18n="nav_podcast">البودكاست</a></li>
+                <li><a href="#campaign" class="nav-link" data-i18n="nav_campaign">الحملة الترويجية</a></li>
+                <li><a href="#posters" class="nav-link" data-i18n="nav_posters">البوسترات</a></li>
+                <li><a href="#brochure-long" class="nav-link" data-i18n="nav_brochure">البرشور</a></li>
+                <li><a href="#tips" class="nav-link" data-i18n="nav_tips">نصائح عملية</a></li>
+            </ul>
+            
+            <div class="lang-selector">
+                <select id="languageSwitcher">
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="tr">Türkçe</option>
+                </select>
+            </div>
+            
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </nav>
+
+   
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-on-scroll" data-i18n="hero_title">طاقة مستدامة</h1>
+                <p class="hero-subtitle animate-on-scroll" data-i18n="hero_subtitle">الاستهلاك المسؤول للطاقة من أجل مستقبل أفضل</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#podcast" class="btn btn-primary" data-i18n="hero_btn_podcast">استمع إلى البودكاست</a>
+                    <a href="#campaign" class="btn btn-secondary" data-i18n="hero_btn_campaign">انظر الى الحملة</a>
+                </div>
+            </div>
+            <div class="hero-image animate-on-scroll">
+                <div class="energy-visual">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                    <i class="fas fa-solar-panel"></i>
+                    <i class="fas fa-wind"></i>
+                    <i class="fas fa-bolt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </section>
+
+	
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2 data-i18n="about_title">"طاقة مستدامة"</h2>
+                    <p data-i18n="about_p1">طاقة مستدامة هو محتوى توعوي يسلّط الضوء على مفهوم الاستهلاك المسؤول للطاقة، وأهميته في الحفاظ على الموارد الطبيعية وتقليل الأثر البيئي. يهدف هذا المحتوى إلى تعزيز الوعي بأهمية استخدام الطاقة بطريقة متوازنة وواعية، بعيدًا عن الهدر والإسراف. نؤمن بأن التغيير يبدأ من السلوكيات اليومية البسيطة، وأن كل قرار صغير، مثل إطفاء جهاز غير مستخدم أو تقليل استهلاك الكهرباء، يمكن أن يُحدث فرقًا حقيقيًا في حماية البيئة وبناء مستقبل أكثر استدامة.</p>
+                    <p data-i18n="about_p2">نسعى من خلال طاقة مستدامة إلى رفع مستوى الوعي المجتمعي بأهمية ترشيد استهلاك الطاقة وأثره الإيجابي على الاقتصاد الوطني والبيئة، والمساهمة في تحقيق أهداف التنمية المستدامة.</p>
+                </div>
+                
+                <div class="about-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number">50٪+</div>
+                        <div class="stat-label" data-i18n="about_stat1">نسبة توفير محتملة في استهلاك الطاقة المنزلية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30٪</div>
+                        <div class="stat-label" data-i18n="about_stat2">هدف خفض الانبعاثات الكربونية بحلول 2030</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="podcast" class="podcast-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-podcast"></i> <span data-i18n="podcast_section_title">بودكاست "طاقة مستدامة"</span></h2>
+                <p data-i18n="podcast_section_subtitle">عمل درامي صوتي توعوي حول أهمية ترشيد استهلاك الطاقة</p>
+            </div>
+            
+            <div class="podcast-player animate-on-scroll">
+                <div class="podcast-cover">
+                    <img src="https://image2url.com/r2/default/images/1770800913907-0b85b152-60a6-469d-bf2c-e0a9f465d476.png" alt="بودكاست طاقة مستدامة">
+                    <div class="podcast-badge" data-i18n="podcast_badge">الحلقة الوحيدة</div>
+                </div>
+                
+              <div class="player-content">
+                <div class="podcast-info">
+                        <h3 data-i18n="podcast_title">رحلة نحو مستقبل مستدام</h3>
+                        <p class="podcast-description" data-i18n="podcast_description">عمل درامي صوتي مؤثر يتتبع قصة عائلة تكتشف أهمية ترشيد استهلاك الطاقة بعد مواجهة تحديات اقتصادية وبيئية. تتعلم العائلة عبر سلسلة من المواقف اليومية كيف يمكن لخيارات بسيطة أن تحدث فرقاً كبيراً في فواتير الطاقة وتأثيرها على البيئة. تقدم الحلقة رسائل توعوية بطريقة مشوقة تناسب جميع أفراد الأسرة.</p>
+                        <div class="podcast-meta">
+                            <span><i class="far fa-calendar"></i> <span data-i18n="">24/2/2026 </span></span>
+                            <span><i class="far fa-clock"></i> <span data-i18n="">2:13</span></span>
+                        </div>
+                  </div>
+                  <audio controls>
+                      <source src="https://files.catbox.moe/p9x53n.mp3" type="audio/mp3">
+                </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	
+    <section id="campaign" class="campaign-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-bullhorn"></i> <span data-i18n="campaign_section_title">الحملة الترويجية</span></h2>
+                <p data-i18n="campaign_section_subtitle">انشر الوعي وشارك في حملتنا للترويج لثقافة ترشيد الطاقة</p>
+            </div>
+            
+            <div class="campaign-grid animate-on-scroll">
+              
+                <div class="campaign-card">
+                    <div class="campaign-img">
+                        <img src="https://image2url.com/r2/default/images/1770802251375-cb37e32c-37e0-4649-8f8c-3145fc957fed.png" alt="حملة ترويجية 1">
+                        <div class="campaign-overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i> <span data-i18n="download">تحميل</span></button>
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> <span data-i18n="share">مشاركة</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+				
+                <div class="campaign-card">
+                    <div class="campaign-img">
+                        <img src="https://image2url.com/r2/default/images/1770802289075-fa7feddd-38b6-4b8d-b2c1-a53726585ad6.png" alt="حملة ترويجية 2">
+                        <div class="campaign-overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i> <span data-i18n="download">تحميل</span></button>
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> <span data-i18n="share">مشاركة</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+         
+                <div class="campaign-card">
+                    <div class="campaign-img">
+                        <img src="https://image2url.com/r2/default/images/1770802326869-d1d55351-9f52-4712-9a97-05fd998b4aac.png" alt="حملة ترويجية 3">
+                        <div class="campaign-overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i> <span data-i18n="download">تحميل</span></button>
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> <span data-i18n="share">مشاركة</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البوسترات -->
+    <section id="posters" class="posters-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-images"></i> <span data-i18n="posters_section_title">معرض البوسترات التوعوية</span></h2>
+                <p data-i18n="posters_section_subtitle">تصفح وحمل بوسترات توعوية عن ترشيد الطاقة</p>
+            </div>
+            
+            <div class="gallery-container animate-on-scroll">
+              
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802372985-8ecf423c-d71d-4049-a3bb-df9feae2a24e.png" 
+                             alt="بوستر توعوي 1" 
+                             class="gallery-img"
+                             id="poster1">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster1')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster1')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+             
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802580607-ea797baa-793d-4af3-98dc-028b3632882c.blob" 
+                             alt="بوستر توعوي 2" 
+                             class="gallery-img" 
+                             id="poster2">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster2')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster2')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802666825-64a9bdae-6531-4eac-8fe3-300da0566fb7.blob" 
+                             alt="بوستر توعوي 3" 
+                             class="gallery-img" 
+                             id="poster3">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster3')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster3')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+				
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802648531-e210758a-8ccc-40da-98d9-776cc22a321f.blob" 
+                             alt="بوستر توعوي 4" 
+                             class="gallery-img" 
+                             id="poster4">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster4')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster4')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802650031-830b889b-5b15-46b8-8f3c-af38f3fbd5c4.blob" 
+                             alt="بوستر توعوي 5" 
+                             class="gallery-img" 
+                             id="poster5">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster5')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster5')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802651754-b0165199-446d-41d1-854a-c6674232dc02.blob" 
+                             alt="بوستر توعوي 6" 
+                             class="gallery-img" 
+                             id="poster6">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster6')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster6')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+				
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802654555-ed252344-2fd5-4067-9ee8-84a7d23ca95c.blob" 
+                             alt="بوستر توعوي 7" 
+                             class="gallery-img" 
+                             id="poster7">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster7')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster7')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802657393-2fdd9cdc-f9ec-40b4-a0f2-b631a7f6929f.blob" 
+                             alt="بوستر توعوي 8" 
+                             class="gallery-img" 
+                             id="poster8">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster8')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster8')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802659725-bb2a91c7-b1b8-4e8c-b17a-b02d4265f929.blob" 
+                             alt="بوستر توعوي 9" 
+                             class="gallery-img" 
+                             id="poster9">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster9')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster9')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="https://image2url.com/r2/default/images/1770802661317-1bc467b1-0502-4f0a-be5b-84574af3932d.blob" 
+                             alt="بوستر توعوي 10" 
+                             class="gallery-img" 
+                             id="poster10">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-actions">
+                            <button class="gallery-btn gallery-download" onclick="downloadImage('poster10')">
+                                <i class="fas fa-download"></i> <span data-i18n="gallery_download">تحميل</span>
+                            </button>
+                            <button class="gallery-btn gallery-preview" onclick="previewImage('poster10')">
+                                <i class="fas fa-search-plus"></i> <span data-i18n="gallery_preview">معاينة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="brochure-long" class="brochure-long-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-file-alt"></i> <span data-i18n="brochure_section_title">البرشور التوعوي</span></h2>
+            </div>
+            
+            <div class="brochure-container animate-on-scroll">
+                <div class="brochure-image">
+                  <img src="https://image2url.com/r2/default/images/1770801095292-bdfb80bb-3771-4eb2-b706-9cef049b85f5.png" 
+                         alt="برشور توعوي طويل" 
+                         class="gallery-img" 
+                         id="longBrochure">
+                </div>
+                
+                <div class="brochure-content">
+                    <h3 data-i18n="brochure_title">دليل شامل لترشيد الطاقة</h3>
+                    <p data-i18n="brochure_desc1">يحتوي هذا البرشور على مجموعة شاملة من النصائح والإرشادات لترشيد استهلاك الطاقة في جميع جوانب الحياة اليومية، في المنازل والمكاتب والأماكن العامة.</p>
+                    <p data-i18n="brochure_desc2">يتضمن البرشور معلومات عن:</p>
+                    <ul style="list-style: none; margin-right: 1.5rem; color: var(--gray-color);">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-left: 0.5rem;"></i> <span data-i18n="brochure_list1">أفضل الممارسات لترشيد الطاقة في المنازل</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-left: 0.5rem;"></i> <span data-i18n="brochure_list2">نصائح لتقليل استهلاك الكهرباء في المكاتب</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-left: 0.5rem;"></i> <span data-i18n="brochure_list3">كيفية اختيار الأجهزة الموفرة للطاقة</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-left: 0.5rem;"></i> <span data-i18n="brochure_list4">فوائد الطاقة المتجددة والبديلة</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-left: 0.5rem;"></i> <span data-i18n="brochure_list5">تأثير ترشيد الطاقة على البيئة والاقتصاد</span></li>
+                    </ul>
+                    
+                    <div class="brochure-buttons">
+                        <button class="btn btn-primary" onclick="downloadImage('longBrochure')">
+                            <i class="fas fa-download"></i> <span data-i18n="brochure_btn_download">تحميل البرشور</span>
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewImage('longBrochure')">
+                            <i class="fas fa-search-plus"></i> <span data-i18n="brochure_btn_preview">معاينة البرشور</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-lightbulb"></i> <span data-i18n="tips_section_title">نصائح عملية لترشيد الطاقة</span></h2>
+                <p data-i18n="tips_section_subtitle">خطوات بسيطة يمكنك تطبيقها للمساهمة في الحفاظ على الطاقة</p>
+            </div>
+            
+            <div class="tips-container animate-on-scroll">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 data-i18n="tips_home_title">في المنزل</h3>
+                    <ul>
+                        <li data-i18n="tips_home_1">استخدم مصابيح LED الموفرة للطاقة</li>
+                        <li data-i18n="tips_home_2">افصل الشواحن والأجهزة الإلكترونية عند عدم الاستخدام</li>
+                        <li data-i18n="tips_home_3">اضبط مكيف الهواء على درجة 24-26 مئوية</li>
+                        <li data-i18n="tips_home_4">استفد من الإضاءة الطبيعية نهاراً</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 data-i18n="tips_work_title">في العمل</h3>
+                    <ul>
+                        <li data-i18n="tips_work_1">أطفئ أجهزة الكمبيوتر بعد انتهاء الدوام</li>
+                        <li data-i18n="tips_work_2">استخدم الطباعة عند الضرورة فقط</li>
+                        <li data-i18n="tips_work_3">شجع سياسة العمل عن بعد لتقليل التنقل</li>
+                        <li data-i18n="tips_work_4">نظم اجتماعات افتراضية عند الإمكان</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 data-i18n="tips_travel_title">في التنقل</h3>
+                    <ul>
+                        <li data-i18n="tips_travel_1">استخدم وسائل النقل العام أو المشاركة في السيارة</li>
+                        <li data-i18n="tips_travel_2">اختر السيارات الكهربائية أو الهجينة</li>
+                        <li data-i18n="tips_travel_3">خطط لرحلاتك لتقليل المسافات المقطوعة</li>
+                        <li data-i18n="tips_travel_4">امشِ أو استخدم الدراجة للمسافات القصيرة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="games" class="games-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-gamepad"></i> <span data-i18n="games_section_title">ألعاب تفاعلية</span></h2>
+                <p data-i18n="games_section_subtitle">اختبر معرفتك واستمتع بتعلم طرق ترشيد الطاقة</p>
+            </div>
+            
+            <div class="games-container">
+                <!-- اللعبة الأولى: مسابقة توفير الطاقة -->
+                <div class="game-card animate-on-scroll">
+                    <h3><i class="fas fa-question-circle"></i> <span data-i18n="game_quiz_title">مسابقة توفير الطاقة</span></h3>
+                    <div id="quiz-game">
+                        <div id="quiz-question" class="quiz-question"></div>
+                        <div id="quiz-options" class="quiz-options"></div>
+                        <div id="quiz-result"></div>
+                        <button id="quiz-next" class="btn btn-primary" style="margin-top:1rem;" data-i18n="quiz_next">السؤال التالي</button>
+                    </div>
+                </div>
+                
+          
+                <div class="game-card animate-on-scroll">
+                    <h3><i class="fas fa-brain"></i> <span data-i18n="game_memory_title">لعبة الذاكرة: طاقة متجددة</span></h3>
+                    <div class="memory-game" id="memory-game">
+                
+                    </div>
+                    <div id="memory-message" style="text-align:center; margin-top:1rem;"></div>
+                    <button id="memory-reset" class="btn btn-secondary" data-i18n="memory_reset">إعادة التشغيل</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<section id="survey" class="survey-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2><i class="fas fa-poll"></i> <span data-i18n="survey_section_title">استبيان الرأي</span></h2>
+                <p data-i18n="survey_section_subtitle">شاركنا برأيك حول عادات استهلاك الطاقة لديك</p>
+            </div>
+            
+            <div class="survey-form animate-on-scroll">
+                <form id="survey-form">
+                    <div class="form-group">
+                        <label data-i18n="survey_q1">1. كم مرة تقوم بإطفاء الأنوار عند مغادرة الغرفة؟</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q1" value="always"> <span data-i18n="survey_q1_always">دائماً</span></label>
+                            <label><input type="radio" name="q1" value="sometimes"> <span data-i18n="survey_q1_sometimes">أحياناً</span></label>
+                            <label><input type="radio" name="q1" value="rarely"> <span data-i18n="survey_q1_rarely">نادراً</span></label>
+                            <label><input type="radio" name="q1" value="never"> <span data-i18n="survey_q1_never">أبداً</span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="survey_q2">2. ما هي ممارسات توفير الطاقة التي تتبعها؟ (اختر كل ما ينطبق)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="q2" value="led"> <span data-i18n="survey_q2_led">استخدام لمبات LED</span></label>
+                            <label><input type="checkbox" name="q2" value="unplug"> <span data-i18n="survey_q2_unplug">فصل الشواحن عند عدم الاستخدام</span></label>
+                            <label><input type="checkbox" name="q2" value="appliances"> <span data-i18n="survey_q2_appliances">استخدام أجهزة موفرة للطاقة</span></label>
+                            <label><input type="checkbox" name="q2" value="natural"> <span data-i18n="survey_q2_natural">الاستفادة من الإضاءة الطبيعية</span></label>
+                            <label><input type="checkbox" name="q2" value="ac"> <span data-i18n="survey_q2_ac">ضبط المكيف على 24 درجة</span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="survey_q3">3. على مقياس من 1 إلى 5، ما مدى أهمية الحفاظ على الطاقة بالنسبة لك؟</label>
+                        <div class="radio-group scale">
+                            <label><input type="radio" name="q3" value="1"> <span data-i18n="survey_q3_1">1 (غير مهم)</span></label>
+                            <label><input type="radio" name="q3" value="2"> 2</label>
+                            <label><input type="radio" name="q3" value="3"> 3</label>
+                            <label><input type="radio" name="q3" value="4"> 4</label>
+                            <label><input type="radio" name="q3" value="5"> <span data-i18n="survey_q3_5">5 (مهم جداً)</span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="survey_q4">4. هل لديك أي اقتراحات لنشر الوعي حول ترشيد الطاقة؟</label>
+                        <textarea name="q4" rows="4" data-i18n-placeholder="survey_q4_placeholder" placeholder="اكتب اقتراحك هنا..."></textarea>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" onclick="submitSurvey()" data-i18n="survey_submit">إرسال الاستبيان</button>
+                </form>
+                <div id="survey-thankyou" style="display:none; text-align:center; padding:2rem;">
+                    <i class="fas fa-check-circle" style="font-size:3rem; color:var(--secondary-color);"></i>
+                    <h3 data-i18n="survey_thankyou_title">شكراً لمشاركتك!</h3>
+                    <p data-i18n="survey_thankyou_msg">تم استلام إجاباتك بنجاح.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-preview-modal" id="imagePreviewModal">
+        <div class="preview-container">
+            <img class="preview-img" id="previewImage" src="" alt="">
+            <div class="close-preview" onclick="closePreview()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#" class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span data-i18n="logo">طاقة مستدامة</span>
+                    </a>
+                    <p data-i18n="footer_about_text">مبادرة توعوية تهدف لنشر ثقافة الاستهلاك المسؤول للطاقة والحفاظ على البيئة من أجل مستقبل أفضل.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-i18n="footer_links_title">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+                        <li><a href="#about" data-i18n="nav_about">عن المبادرة</a></li>
+                        <li><a href="#podcast" data-i18n="nav_podcast">البودكاست</a></li>
+                        <li><a href="#campaign" data-i18n="nav_campaign">الحملة الترويجية</a></li>
+                        <li><a href="#posters" data-i18n="nav_posters">البوسترات</a></li>
+                        <li><a href="#brochure-long" data-i18n="nav_brochure">البرشور الطويل</a></li>
+                        <li><a href="#tips" data-i18n="nav_tips">نصائح عملية</a></li>
+                        <li><a href="#games" data-i18n="nav_games">الألعاب</a></li>
+                        <li><a href="#survey" data-i18n="nav_survey">الاستبيان</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-i18n="footer_contact_title">اتصل بنا</h4>
+                    <ul>
+                      <li><i class="fas fa-phone"></i> <span data-i18n="">⁦+962 7 8279 6712⁩</span></li>
+                      <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">المملكة الاردنية الهاشمية</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">جميع الحقوق محفوظة 2026</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Translations object
+        const translations = {
+            ar: {
+                logo: "طاقة مستدامة",
+                nav_home: "الرئيسية",
+                nav_about: "عن المبادرة",
+                nav_podcast: "البودكاست",
+                nav_campaign: "الحملة الترويجية",
+                nav_posters: "البوسترات",
+                nav_brochure: "البرشور",
+                nav_tips: "نصائح عملية",
+                nav_games: "الألعاب",
+                nav_survey: "الاستبيان",
+                hero_title: "طاقة مستدامة",
+                hero_subtitle: "الاستهلاك المسؤول للطاقة من أجل مستقبل أفضل",
+                hero_btn_podcast: "استمع إلى البودكاست",
+                hero_btn_campaign: "انظر الى الحملة",
+                about_title: '"طاقة مستدامة"',
+                about_p1: "طاقة مستدامة هو محتوى توعوي يسلّط الضوء على مفهوم الاستهلاك المسؤول للطاقة، وأهميته في الحفاظ على الموارد الطبيعية وتقليل الأثر البيئي. يهدف هذا المحتوى إلى تعزيز الوعي بأهمية استخدام الطاقة بطريقة متوازنة وواعية، بعيدًا عن الهدر والإسراف. نؤمن بأن التغيير يبدأ من السلوكيات اليومية البسيطة، وأن كل قرار صغير، مثل إطفاء جهاز غير مستخدم أو تقليل استهلاك الكهرباء، يمكن أن يُحدث فرقًا حقيقيًا في حماية البيئة وبناء مستقبل أكثر استدامة.",
+                about_p2: "نسعى من خلال طاقة مستدامة إلى رفع مستوى الوعي المجتمعي بأهمية ترشيد استهلاك الطاقة وأثره الإيجابي على الاقتصاد الوطني والبيئة، والمساهمة في تحقيق أهداف التنمية المستدامة.",
+                about_stat1: "نسبة توفير محتملة في استهلاك الطاقة المنزلية",
+                about_stat2: "هدف خفض الانبعاثات الكربونية بحلول 2030",
+
+                podcast_section_title: 'بودكاست "طاقة مستدامة"',
+                podcast_section_subtitle: "عمل درامي صوتي توعوي حول أهمية ترشيد استهلاك الطاقة",
+                podcast_badge: "الحلقة الوحيدة",
+                podcast_title: "رحلة نحو مستقبل مستدام",
+                podcast_description: "عمل درامي صوتي مؤثر يتتبع قصة عائلة تكتشف أهمية ترشيد استهلاك الطاقة بعد مواجهة تحديات اقتصادية وبيئية. تتعلم العائلة عبر سلسلة من المواقف اليومية كيف يمكن لخيارات بسيطة أن تحدث فرقاً كبيراً في فواتير الطاقة وتأثيرها على البيئة. تقدم الحلقة رسائل توعوية بطريقة مشوقة تناسب جميع أفراد الأسرة.",
+                podcast_date: "15 نوفمبر 2023",
+                podcast_duration: "45 دقيقة",
+                campaign_section_title: "الحملة الترويجية",
+                campaign_section_subtitle: "انشر الوعي وشارك في حملتنا للترويج لثقافة ترشيد الطاقة",
+                download: "تحميل",
+                share: "مشاركة",
+                posters_section_title: "معرض البوسترات التوعوية",
+                posters_section_subtitle: "تصفح وحمل بوسترات توعوية عن ترشيد الطاقة",
+                gallery_download: "تحميل",
+                gallery_preview: "معاينة",
+                brochure_section_title: "البرشور التوعوي",
+                brochure_title: "دليل شامل لترشيد الطاقة",
+                brochure_desc1: "يحتوي هذا البرشور على مجموعة شاملة من النصائح والإرشادات لترشيد استهلاك الطاقة في جميع جوانب الحياة اليومية، في المنازل والمكاتب والأماكن العامة.",
+                brochure_desc2: "يتضمن البرشور معلومات عن:",
+                brochure_list1: "أفضل الممارسات لترشيد الطاقة في المنازل",
+                brochure_list2: "نصائح لتقليل استهلاك الكهرباء في المكاتب",
+                brochure_list3: "كيفية اختيار الأجهزة الموفرة للطاقة",
+                brochure_list4: "فوائد الطاقة المتجددة والبديلة",
+                brochure_list5: "تأثير ترشيد الطاقة على البيئة والاقتصاد",
+                brochure_btn_download: "تحميل البرشور",
+                brochure_btn_preview: "معاينة البرشور",
+                tips_section_title: "نصائح عملية لترشيد الطاقة",
+                tips_section_subtitle: "خطوات بسيطة يمكنك تطبيقها للمساهمة في الحفاظ على الطاقة",
+                tips_home_title: "في المنزل",
+                tips_home_1: "استخدم مصابيح LED الموفرة للطاقة",
+                tips_home_2: "افصل الشواحن والأجهزة الإلكترونية عند عدم الاستخدام",
+                tips_home_3: "اضبط مكيف الهواء على درجة 24-26 مئوية",
+                tips_home_4: "استفد من الإضاءة الطبيعية نهاراً",
+                tips_work_title: "في العمل",
+                tips_work_1: "أطفئ أجهزة الكمبيوتر بعد انتهاء الدوام",
+                tips_work_2: "استخدم الطباعة عند الضرورة فقط",
+                tips_work_3: "شجع سياسة العمل عن بعد لتقليل التنقل",
+                tips_work_4: "نظم اجتماعات افتراضية عند الإمكان",
+                tips_travel_title: "في التنقل",
+                tips_travel_1: "استخدم وسائل النقل العام أو المشاركة في السيارة",
+                tips_travel_2: "اختر السيارات الكهربائية أو الهجينة",
+                tips_travel_3: "خطط لرحلاتك لتقليل المسافات المقطوعة",
+                tips_travel_4: "امشِ أو استخدم الدراجة للمسافات القصيرة",
+                games_section_title: "ألعاب تفاعلية",
+                games_section_subtitle: "اختبر معرفتك واستمتع بتعلم طرق ترشيد الطاقة",
+                game_quiz_title: "مسابقة توفير الطاقة",
+                game_memory_title: "لعبة الذاكرة: طاقة متجددة",
+                quiz_next: "السؤال التالي",
+                memory_reset: "إعادة التشغيل",
+                survey_section_title: "استبيان الرأي",
+                survey_section_subtitle: "شاركنا برأيك حول عادات استهلاك الطاقة لديك",
+                survey_q1: "1. كم مرة تقوم بإطفاء الأنوار عند مغادرة الغرفة؟",
+                survey_q1_always: "دائماً",
+                survey_q1_sometimes: "أحياناً",
+                survey_q1_rarely: "نادراً",
+                survey_q1_never: "أبداً",
+                survey_q2: "2. ما هي ممارسات توفير الطاقة التي تتبعها؟ (اختر كل ما ينطبق)",
+                survey_q2_led: "استخدام لمبات LED",
+                survey_q2_unplug: "فصل الشواحن عند عدم الاستخدام",
+                survey_q2_appliances: "استخدام أجهزة موفرة للطاقة",
+                survey_q2_natural: "الاستفادة من الإضاءة الطبيعية",
+                survey_q2_ac: "ضبط المكيف على 24 درجة",
+                survey_q3: "3. على مقياس من 1 إلى 5، ما مدى أهمية الحفاظ على الطاقة بالنسبة لك؟",
+                survey_q3_1: "1 (غير مهم)",
+                survey_q3_5: "5 (مهم جداً)",
+                survey_q4: "4. هل لديك أي اقتراحات لنشر الوعي حول ترشيد الطاقة؟",
+                survey_q4_placeholder: "اكتب اقتراحك هنا...",
+                survey_submit: "إرسال الاستبيان",
+                survey_thankyou_title: "شكراً لمشاركتك!",
+                survey_thankyou_msg: "تم استلام إجاباتك بنجاح.",
+                footer_about_text: "مبادرة توعوية تهدف لنشر ثقافة الاستهلاك المسؤول للطاقة والحفاظ على البيئة من أجل مستقبل أفضل.",
+                footer_links_title: "روابط سريعة",
+                footer_contact_title: "اتصل بنا",
+                footer_phone: "+962 7 8279 6712",
+                footer_address: "المملكة الاردنية الهاشمية",
+                footer_copyright: "جميع الحقوق محفوظة 2026"
+            },
+            en: {
+                logo: "Sustainable Energy",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_podcast: "Podcast",
+                nav_campaign: "Campaign",
+                nav_posters: "Posters",
+                nav_brochure: "Brochure",
+                nav_tips: "Tips",
+                nav_games: "Games",
+                nav_survey: "Survey",
+                hero_title: "Sustainable Energy",
+                hero_subtitle: "Responsible energy consumption for a better future",
+                hero_btn_podcast: "Listen to Podcast",
+                hero_btn_campaign: "View Campaign",
+                about_title: '"Sustainable Energy"',
+                about_p1: "Sustainable Energy is an awareness content that highlights the concept of responsible energy consumption and its importance in preserving natural resources and reducing environmental impact. This content aims to raise awareness about the importance of using energy in a balanced and conscious way, away from waste and extravagance. We believe that change starts with simple daily behaviors, and that every small decision, such as turning off an unused device or reducing electricity consumption, can make a real difference in protecting the environment and building a more sustainable future.",
+                about_p2: "Through Sustainable Energy, we seek to raise community awareness about the importance of rationalizing energy consumption and its positive impact on the national economy and environment, and contribute to achieving sustainable development goals.",
+                about_stat1: "Potential saving in household energy consumption",
+                about_stat2: "Target to reduce carbon emissions by 2030",
+                podcast_section_title: "Sustainable Energy Podcast",
+                podcast_section_subtitle: "An awareness audio drama about the importance of rationalizing energy consumption",
+                podcast_badge: "Single Episode",
+                podcast_title: "A Journey Towards a Sustainable Future",
+                podcast_description: "An impactful audio drama following the story of a family discovering the importance of rationalizing energy consumption after facing economic and environmental challenges. Through a series of daily situations, the family learns how simple choices can make a big difference in energy bills and their impact on the environment. The episode delivers awareness messages in an engaging way suitable for all family members.",
+                podcast_date: "November 15, 2023",
+                podcast_duration: "45 minutes",
+                campaign_section_title: "Promotional Campaign",
+                campaign_section_subtitle: "Spread awareness and participate in our campaign to promote a culture of energy rationalization",
+                download: "Download",
+                share: "Share",
+                posters_section_title: "Awareness Posters Gallery",
+                posters_section_subtitle: "Browse and download awareness posters about energy rationalization",
+                gallery_download: "Download",
+                gallery_preview: "Preview",
+                brochure_section_title: "Awareness Brochure",
+                brochure_title: "Comprehensive Guide to Energy Rationalization",
+                brochure_desc1: "This brochure contains a comprehensive set of tips and guidelines for rationalizing energy consumption in all aspects of daily life, in homes, offices, and public places.",
+                brochure_desc2: "The brochure includes information about:",
+                brochure_list1: "Best practices for energy rationalization in homes",
+                brochure_list2: "Tips to reduce electricity consumption in offices",
+                brochure_list3: "How to choose energy-efficient appliances",
+                brochure_list4: "Benefits of renewable and alternative energy",
+                brochure_list5: "Impact of energy rationalization on environment and economy",
+                brochure_btn_download: "Download Brochure",
+                brochure_btn_preview: "Preview Brochure",
+                tips_section_title: "Practical Tips for Energy Rationalization",
+                tips_section_subtitle: "Simple steps you can apply to contribute to energy conservation",
+                tips_home_title: "At Home",
+                tips_home_1: "Use energy-saving LED bulbs",
+                tips_home_2: "Unplug chargers and electronics when not in use",
+                tips_home_3: "Set air conditioner to 24-26°C",
+                tips_home_4: "Take advantage of natural light during the day",
+                tips_work_title: "At Work",
+                tips_work_1: "Turn off computers after work",
+                tips_work_2: "Print only when necessary",
+                tips_work_3: "Encourage remote work policy to reduce commuting",
+                tips_work_4: "Organize virtual meetings when possible",
+                tips_travel_title: "Transportation",
+                tips_travel_1: "Use public transport or carpool",
+                tips_travel_2: "Choose electric or hybrid cars",
+                tips_travel_3: "Plan your trips to reduce distances",
+                tips_travel_4: "Walk or use a bike for short distances",
+                games_section_title: "Interactive Games",
+                games_section_subtitle: "Test your knowledge and enjoy learning about energy saving methods",
+                game_quiz_title: "Energy Saving Quiz",
+                game_memory_title: "Memory Game: Renewable Energy",
+                quiz_next: "Next Question",
+                memory_reset: "Restart",
+                survey_section_title: "Opinion Survey",
+                survey_section_subtitle: "Share your opinion about your energy consumption habits",
+                survey_q1: "1. How often do you turn off lights when leaving a room?",
+                survey_q1_always: "Always",
+                survey_q1_sometimes: "Sometimes",
+                survey_q1_rarely: "Rarely",
+                survey_q1_never: "Never",
+                survey_q2: "2. What energy saving practices do you follow? (Select all that apply)",
+                survey_q2_led: "Using LED bulbs",
+                survey_q2_unplug: "Unplugging chargers when not in use",
+                survey_q2_appliances: "Using energy-efficient appliances",
+                survey_q2_natural: "Taking advantage of natural light",
+                survey_q2_ac: "Setting AC to 24°C",
+                survey_q3: "3. On a scale of 1 to 5, how important is energy conservation to you?",
+                survey_q3_1: "1 (Not important)",
+                survey_q3_5: "5 (Very important)",
+                survey_q4: "4. Do you have any suggestions for spreading awareness about energy rationalization?",
+                survey_q4_placeholder: "Write your suggestion here...",
+                survey_submit: "Submit Survey",
+                survey_thankyou_title: "Thank you for participating!",
+                survey_thankyou_msg: "Your responses have been received successfully.",
+                footer_about_text: "An awareness initiative aimed at spreading the culture of responsible energy consumption and environmental preservation for a better future.",
+                footer_links_title: "Quick Links",
+                footer_contact_title: "Contact Us",
+                footer_phone: "+962 7 8279 6712",
+                footer_address: "Hashemite Kingdom of Jordan",
+                footer_copyright: "All rights reserved 2026"
+            },
+            fr: {
+                logo: "Énergie Durable",
+                nav_home: "Accueil",
+                nav_about: "À propos",
+                nav_podcast: "Podcast",
+                nav_campaign: "Campagne",
+                nav_posters: "Affiches",
+                nav_brochure: "Brochure",
+                nav_tips: "Conseils",
+                nav_games: "Jeux",
+                nav_survey: "Sondage",
+                hero_title: "Énergie Durable",
+                hero_subtitle: "Consommation responsable d'énergie pour un avenir meilleur",
+                hero_btn_podcast: "Écouter le podcast",
+                hero_btn_campaign: "Voir la campagne",
+                about_title: '"Énergie Durable"',
+                about_p1: "Énergie Durable est un contenu de sensibilisation qui met en lumière le concept de consommation responsable d'énergie et son importance dans la préservation des ressources naturelles et la réduction de l'impact environnemental. Ce contenu vise à sensibiliser à l'importance d'utiliser l'énergie de manière équilibrée et consciente, loin du gaspillage. Nous croyons que le changement commence par des comportements quotidiens simples, et que chaque petite décision, comme éteindre un appareil inutilisé ou réduire la consommation d'électricité, peut faire une réelle différence dans la protection de l'environnement et la construction d'un avenir plus durable.",
+                about_p2: "À travers Énergie Durable, nous cherchons à sensibiliser la communauté à l'importance de rationaliser la consommation d'énergie et son impact positif sur l'économie nationale et l'environnement, et à contribuer à la réalisation des objectifs de développement durable.",
+                about_stat1: "Économie potentielle dans la consommation d'énergie domestique",
+                about_stat2: "Objectif de réduction des émissions de carbone d'ici 2030",
+                podcast_section_title: "Podcast Énergie Durable",
+                podcast_section_subtitle: "Un audio-drame de sensibilisation sur l'importance de rationaliser la consommation d'énergie",
+                podcast_badge: "Épisode unique",
+                podcast_title: "Un voyage vers un avenir durable",
+                podcast_description: "Un audio-drame percutant qui suit l'histoire d'une famille découvrant l'importance de rationaliser la consommation d'énergie après avoir fait face à des défis économiques et environnementaux. À travers une série de situations quotidiennes, la famille apprend comment des choix simples peuvent faire une grande différence sur les factures d'énergie et leur impact sur l'environnement. L'épisode délivre des messages de sensibilisation de manière engageante adaptée à tous les membres de la famille.",
+                podcast_date: "15 novembre 2023",
+                podcast_duration: "45 minutes",
+                campaign_section_title: "Campagne promotionnelle",
+                campaign_section_subtitle: "Diffusez la sensibilisation et participez à notre campagne pour promouvoir une culture de rationalisation de l'énergie",
+                download: "Télécharger",
+                share: "Partager",
+                posters_section_title: "Galerie d'affiches de sensibilisation",
+                posters_section_subtitle: "Parcourez et téléchargez des affiches de sensibilisation sur la rationalisation de l'énergie",
+                gallery_download: "Télécharger",
+                gallery_preview: "Aperçu",
+                brochure_section_title: "Brochure de sensibilisation",
+                brochure_title: "Guide complet pour la rationalisation de l'énergie",
+                brochure_desc1: "Cette brochure contient un ensemble complet de conseils et de directives pour rationaliser la consommation d'énergie dans tous les aspects de la vie quotidienne, dans les maisons, les bureaux et les lieux publics.",
+                brochure_desc2: "La brochure comprend des informations sur :",
+                brochure_list1: "Bonnes pratiques pour la rationalisation de l'énergie dans les maisons",
+                brochure_list2: "Conseils pour réduire la consommation d'électricité dans les bureaux",
+                brochure_list3: "Comment choisir des appareils économes en énergie",
+                brochure_list4: "Avantages des énergies renouvelables et alternatives",
+                brochure_list5: "Impact de la rationalisation de l'énergie sur l'environnement et l'économie",
+                brochure_btn_download: "Télécharger la brochure",
+                brochure_btn_preview: "Aperçu de la brochure",
+                tips_section_title: "Conseils pratiques pour la rationalisation de l'énergie",
+                tips_section_subtitle: "Des étapes simples que vous pouvez appliquer pour contribuer à la conservation de l'énergie",
+                tips_home_title: "À la maison",
+                tips_home_1: "Utilisez des ampoules LED économes en énergie",
+                tips_home_2: "Débranchez les chargeurs et appareils électroniques lorsqu'ils ne sont pas utilisés",
+                tips_home_3: "Réglez le climatiseur à 24-26°C",
+                tips_home_4: "Profitez de la lumière naturelle pendant la journée",
+                tips_work_title: "Au travail",
+                tips_work_1: "Éteignez les ordinateurs après le travail",
+                tips_work_2: "Imprimez uniquement en cas de nécessité",
+                tips_work_3: "Encouragez la politique de travail à distance pour réduire les déplacements",
+                tips_work_4: "Organisez des réunions virtuelles si possible",
+                tips_travel_title: "Transport",
+                tips_travel_1: "Utilisez les transports en commun ou le covoiturage",
+                tips_travel_2: "Choisissez des voitures électriques ou hybrides",
+                tips_travel_3: "Planifiez vos trajets pour réduire les distances",
+                tips_travel_4: "Marchez ou utilisez un vélo pour les courtes distances",
+                games_section_title: "Jeux interactifs",
+                games_section_subtitle: "Testez vos connaissances et apprenez en vous amusant sur les méthodes d'économie d'énergie",
+                game_quiz_title: "Quiz sur les économies d'énergie",
+                game_memory_title: "Jeu de mémoire : Énergie renouvelable",
+                quiz_next: "Question suivante",
+                memory_reset: "Redémarrer",
+                survey_section_title: "Sondage d'opinion",
+                survey_section_subtitle: "Partagez votre avis sur vos habitudes de consommation d'énergie",
+                survey_q1: "1. À quelle fréquence éteignez-vous les lumières en quittant une pièce ?",
+                survey_q1_always: "Toujours",
+                survey_q1_sometimes: "Parfois",
+                survey_q1_rarely: "Rarement",
+                survey_q1_never: "Jamais",
+                survey_q2: "2. Quelles pratiques d'économie d'énergie suivez-vous ? (Sélectionnez tout ce qui s'applique)",
+                survey_q2_led: "Utilisation d'ampoules LED",
+                survey_q2_unplug: "Débrancher les chargeurs lorsqu'ils ne sont pas utilisés",
+                survey_q2_appliances: "Utilisation d'appareils économes en énergie",
+                survey_q2_natural: "Profiter de la lumière naturelle",
+                survey_q2_ac: "Régler la climatisation à 24°C",
+                survey_q3: "3. Sur une échelle de 1 à 5, quelle est l'importance de la conservation de l'énergie pour vous ?",
+                survey_q3_1: "1 (Pas important)",
+                survey_q3_5: "5 (Très important)",
+                survey_q4: "4. Avez-vous des suggestions pour sensibiliser à la rationalisation de l'énergie ?",
+                survey_q4_placeholder: "Écrivez votre suggestion ici...",
+                survey_submit: "Soumettre le sondage",
+                survey_thankyou_title: "Merci pour votre participation !",
+                survey_thankyou_msg: "Vos réponses ont été reçues avec succès.",
+                footer_about_text: "Une initiative de sensibilisation visant à diffuser la culture de la consommation responsable d'énergie et de la préservation de l'environnement pour un avenir meilleur.",
+                footer_links_title: "Liens rapides",
+                footer_contact_title: "Contactez-nous",
+                footer_phone: "+962 7 8279 6712",
+                footer_address: "Royaume hachémite de Jordanie",
+                footer_copyright: "Tous droits réservés 2026"
+            },
+            tr: {
+                logo: "Sürdürülebilir Enerji",
+                nav_home: "Ana Sayfa",
+                nav_about: "Hakkında",
+                nav_podcast: "Podcast",
+                nav_campaign: "Kampanya",
+                nav_posters: "Posterler",
+                nav_brochure: "Broşür",
+                nav_tips: "İpuçları",
+                nav_games: "Oyunlar",
+                nav_survey: "Anket",
+                hero_title: "Sürdürülebilir Enerji",
+                hero_subtitle: "Daha iyi bir gelecek için sorumlu enerji tüketimi",
+                hero_btn_podcast: "Podcast'i Dinle",
+                hero_btn_campaign: "Kampanyayı Gör",
+                about_title: '"Sürdürülebilir Enerji"',
+                about_p1: "Sürdürülebilir Enerji, sorumlu enerji tüketimi kavramını ve bunun doğal kaynakları koruma ve çevresel etkiyi azaltmadaki önemini vurgulayan bir farkındalık içeriğidir. Bu içerik, enerjiyi israf ve savurganlıktan uzak, dengeli ve bilinçli bir şekilde kullanmanın önemi hakkında farkındalık yaratmayı amaçlar. Değişimin basit günlük davranışlarla başladığına ve kullanılmayan bir cihazı kapatmak veya elektrik tüketimini azaltmak gibi her küçük kararın çevreyi korumada ve daha sürdürülebilir bir gelecek inşa etmede gerçek bir fark yaratabileceğine inanıyoruz.",
+                about_p2: "Sürdürülebilir Enerji aracılığıyla, enerji tüketimini rasyonelleştirmenin önemi ve bunun ulusal ekonomi ve çevre üzerindeki olumlu etkisi konusunda toplumsal farkındalığı artırmayı ve sürdürülebilir kalkınma hedeflerine ulaşılmasına katkıda bulunmayı hedefliyoruz.",
+                about_stat1: "Evsel enerji tüketiminde potansiyel tasarruf",
+                about_stat2: "2030'a kadar karbon emisyonlarını azaltma hedefi",
+                podcast_section_title: "Sürdürülebilir Enerji Podcast",
+                podcast_section_subtitle: "Enerji tüketimini rasyonelleştirmenin önemi hakkında bir farkındalık sesli draması",
+                podcast_badge: "Tek Bölüm",
+                podcast_title: "Sürdürülebilir Bir Geleceğe Yolculuk",
+                podcast_description: "Ekonomik ve çevresel zorluklarla karşılaştıktan sonra enerji tüketimini rasyonelleştirmenin önemini keşfeden bir ailenin hikayesini takip eden etkileyici bir sesli drama. Günlük durumlar dizisi aracılığıyla aile, basit seçimlerin enerji faturalarında ve çevre üzerindeki etkilerinde nasıl büyük bir fark yaratabileceğini öğrenir. Bölüm, tüm aile üyeleri için uygun, ilgi çekici bir şekilde farkındalık mesajları verir.",
+                podcast_date: "15 Kasım 2023",
+                podcast_duration: "45 dakika",
+                campaign_section_title: "Tanıtım Kampanyası",
+                campaign_section_subtitle: "Farkındalık yayın ve enerji rasyonelleştirme kültürünü teşvik etmek için kampanyamıza katılın",
+                download: "İndir",
+                share: "Paylaş",
+                posters_section_title: "Farkındalık Posterleri Galerisi",
+                posters_section_subtitle: "Enerji rasyonelleştirme hakkındaki farkındalık posterlerine göz atın ve indirin",
+                gallery_download: "İndir",
+                gallery_preview: "Önizle",
+                brochure_section_title: "Farkındalık Broşürü",
+                brochure_title: "Enerji Rasyonelleştirme için Kapsamlı Kılavuz",
+                brochure_desc1: "Bu broşür, evlerde, ofislerde ve kamusal alanlarda günlük yaşamın tüm yönlerinde enerji tüketimini rasyonelleştirmek için kapsamlı bir ipucu ve kılavuz seti içerir.",
+                brochure_desc2: "Broşür şu konularda bilgi içerir:",
+                brochure_list1: "Evlerde enerji rasyonelleştirmesi için en iyi uygulamalar",
+                brochure_list2: "Ofislerde elektrik tüketimini azaltmak için ipuçları",
+                brochure_list3: "Enerji tasarruflu cihazlar nasıl seçilir",
+                brochure_list4: "Yenilenebilir ve alternatif enerjinin faydaları",
+                brochure_list5: "Enerji rasyonelleştirmesinin çevre ve ekonomi üzerindeki etkisi",
+                brochure_btn_download: "Broşürü İndir",
+                brochure_btn_preview: "Broşürü Önizle",
+                tips_section_title: "Enerji Rasyonelleştirmesi için Pratik İpuçları",
+                tips_section_subtitle: "Enerji tasarrufuna katkıda bulunmak için uygulayabileceğiniz basit adımlar",
+                tips_home_title: "Evde",
+                tips_home_1: "Enerji tasarruflu LED ampuller kullanın",
+                tips_home_2: "Kullanılmadığında şarj aletlerini ve elektronik cihazları fişten çekin",
+                tips_home_3: "Klimayı 24-26°C'ye ayarlayın",
+                tips_home_4: "Gün boyunca doğal ışıktan yararlanın",
+                tips_work_title: "İşte",
+                tips_work_1: "İşten sonra bilgisayarları kapatın",
+                tips_work_2: "Yalnızca gerektiğinde yazdırın",
+                tips_work_3: "İşe gidip gelmeyi azaltmak için uzaktan çalışma politikasını teşvik edin",
+                tips_work_4: "Mümkün olduğunda sanal toplantılar düzenleyin",
+                tips_travel_title: "Ulaşım",
+                tips_travel_1: "Toplu taşıma veya araç paylaşımı kullanın",
+                tips_travel_2: "Elektrikli veya hibrit arabaları seçin",
+                tips_travel_3: "Kat edilen mesafeleri azaltmak için seyahatlerinizi planlayın",
+                tips_travel_4: "Kısa mesafeler için yürüyün veya bisiklet kullanın",
+                games_section_title: "İnteraktif Oyunlar",
+                games_section_subtitle: "Bilginizi test edin ve enerji tasarrufu yöntemlerini öğrenmenin tadını çıkarın",
+                game_quiz_title: "Enerji Tasarrufu Yarışması",
+                game_memory_title: "Hafıza Oyunu: Yenilenebilir Enerji",
+                quiz_next: "Sonraki Soru",
+                memory_reset: "Yeniden Başlat",
+                survey_section_title: "Görüş Anketi",
+                survey_section_subtitle: "Enerji tüketim alışkanlıklarınız hakkındaki görüşünüzü paylaşın",
+                survey_q1: "1. Bir odadan çıkarken ışıkları ne sıklıkla kapatırsınız?",
+                survey_q1_always: "Her zaman",
+                survey_q1_sometimes: "Bazen",
+                survey_q1_rarely: "Nadiren",
+                survey_q1_never: "Asla",
+                survey_q2: "2. Hangi enerji tasarrufu uygulamalarını takip ediyorsunuz? (Uygun olanların tümünü seçin)",
+                survey_q2_led: "LED ampul kullanımı",
+                survey_q2_unplug: "Kullanılmadığında şarj aletlerini fişten çekme",
+                survey_q2_appliances: "Enerji tasarruflu cihazlar kullanma",
+                survey_q2_natural: "Doğal ışıktan yararlanma",
+                survey_q2_ac: "Klimayı 24°C'ye ayarlama",
+                survey_q3: "3. 1'den 5'e kadar bir ölçekte, enerji tasarrufu sizin için ne kadar önemli?",
+                survey_q3_1: "1 (Önemli değil)",
+                survey_q3_5: "5 (Çok önemli)",
+                survey_q4: "4. Enerji rasyonelleştirmesi hakkında farkındalık yaymak için herhangi bir öneriniz var mı?",
+                survey_q4_placeholder: "Önerinizi buraya yazın...",
+                survey_submit: "Anketi Gönder",
+                survey_thankyou_title: "Katılımınız için teşekkürler!",
+                survey_thankyou_msg: "Yanıtlarınız başarıyla alındı.",
+                footer_about_text: "Daha iyi bir gelecek için sorumlu enerji tüketimi ve çevre koruma kültürünü yaymayı amaçlayan bir farkındalık girişimi.",
+                footer_links_title: "Hızlı Bağlantılar",
+                footer_contact_title: "Bize Ulaşın",
+                footer_phone: "+962 7 8279 6712",
+                footer_address: "Ürdün Haşimi Krallığı",
+                footer_copyright: "Tüm hakları saklıdır 2026"
+            }
+        };
+
+        // Quiz questions translations
+        const quizQuestionsTranslations = {
+            ar: [
+                { question: 'ما هو أفضل إجراء لتوفير الطاقة عند مغادرة الغرفة؟', options: ['ترك الأنوار مضاءة', 'إطفاء الأنوار', 'تشغيل مكيف الهواء', 'فتح النوافذ'], correct: 1 },
+                { question: 'أي من هذه المصابيح أكثر كفاءة في استهلاك الطاقة؟', options: ['المصابيح المتوهجة', 'مصابيح LED', 'مصابيح الفلورسنت', 'جميعها متساوية'], correct: 1 },
+                { question: 'ما درجة الحرارة المثالية لتكييف الهواء في الصيف لتوفير الطاقة؟', options: ['18 درجة', '22 درجة', '24-26 درجة', '30 درجة'], correct: 2 }
+            ],
+            en: [
+                { question: 'What is the best action to save energy when leaving a room?', options: ['Leave lights on', 'Turn off lights', 'Turn on air conditioner', 'Open windows'], correct: 1 },
+                { question: 'Which of these bulbs is most energy efficient?', options: ['Incandescent bulbs', 'LED bulbs', 'Fluorescent bulbs', 'All are equal'], correct: 1 },
+                { question: 'What is the ideal air conditioner temperature in summer to save energy?', options: ['18°C', '22°C', '24-26°C', '30°C'], correct: 2 }
+            ],
+            fr: [
+                { question: 'Quelle est la meilleure action pour économiser l\'énergie en quittant une pièce ?', options: ['Laisser les lumières allumées', 'Éteindre les lumières', 'Allumer le climatiseur', 'Ouvrir les fenêtres'], correct: 1 },
+                { question: 'Laquelle de ces ampoules est la plus économe en énergie ?', options: ['Ampoules à incandescence', 'Ampoules LED', 'Ampoules fluorescentes', 'Toutes sont égales'], correct: 1 },
+                { question: 'Quelle est la température idéale du climatiseur en été pour économiser l\'énergie ?', options: ['18°C', '22°C', '24-26°C', '30°C'], correct: 2 }
+            ],
+            tr: [
+                { question: 'Bir odadan çıkarken enerji tasarrufu yapmak için en iyi eylem nedir?', options: ['Işıkları açık bırakmak', 'Işıkları kapatmak', 'Klimayı açmak', 'Pencereleri açmak'], correct: 1 },
+                { question: 'Bu ampullerden hangisi enerji açısından en verimlidir?', options: ['Akkor ampuller', 'LED ampuller', 'Florasan ampuller', 'Hepsi eşit'], correct: 1 },
+                { question: 'Yaz aylarında enerji tasarrufu için ideal klima sıcaklığı nedir?', options: ['18°C', '22°C', '24-26°C', '30°C'], correct: 2 }
+            ]
+        };
+
+        let currentLang = 'ar';
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            // Set direction
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
+            // Update quiz questions (reload quiz)
+            loadQuizQuestion(currentQuizIndex);
+        }
+
+        // Language switcher event
+        document.getElementById('languageSwitcher').addEventListener('change', (e) => {
+            changeLanguage(e.target.value);
+        });
+
+        // Quiz functions
+        function loadQuizQuestion(index) {
+            const quizQuestionEl = document.getElementById('quiz-question');
+            const quizOptionsEl = document.getElementById('quiz-options');
+            const quizResultEl = document.getElementById('quiz-result');
+            const quizNextBtn = document.getElementById('quiz-next');
+            
+            if (!quizQuestionEl || !quizOptionsEl) return;
+            
+            const q = quizQuestionsTranslations[currentLang][index];
+            if (!q) return;
+            
+            quizQuestionEl.textContent = q.question;
+            quizOptionsEl.innerHTML = '';
+            q.options.forEach((opt, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = opt;
+                optionDiv.dataset.optIndex = i;
+                optionDiv.addEventListener('click', () => selectAnswer(i, q.correct));
+                quizOptionsEl.appendChild(optionDiv);
+            });
+            quizResultEl.innerHTML = '';
+        }
+
+        function selectAnswer(selected, correct) {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            if (selected === correct) {
+                quizScore++;
+                options[selected].classList.add('correct');
+                document.getElementById('quiz-result').innerHTML = '<p style="color: green;">✅ ' + (currentLang === 'ar' ? 'إجابة صحيحة!' : currentLang === 'en' ? 'Correct answer!' : currentLang === 'fr' ? 'Bonne réponse!' : 'Doğru cevap!') + '</p>';
+            } else {
+                options[selected].classList.add('wrong');
+                options[correct].classList.add('correct');
+                document.getElementById('quiz-result').innerHTML = '<p style="color: red;">❌ ' + (currentLang === 'ar' ? 'إجابة خاطئة. الإجابة الصحيحة مظللة بالأخضر.' : currentLang === 'en' ? 'Wrong answer. Correct answer is highlighted in green.' : currentLang === 'fr' ? 'Mauvaise réponse. La bonne réponse est surlignée en vert.' : 'Yanlış cevap. Doğru cevap yeşil ile vurgulanmıştır.') + '</p>';
+            }
+        }
+
+        // Next button
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizQuestionsTranslations[currentLang].length) {
+                loadQuizQuestion(currentQuizIndex);
+            } else {
+                document.getElementById('quiz-question').textContent = currentLang === 'ar' ? 'انتهت المسابقة!' : currentLang === 'en' ? 'Quiz finished!' : currentLang === 'fr' ? 'Quiz terminé!' : 'Yarışma bitti!';
+                document.getElementById('quiz-options').innerHTML = '';
+                document.getElementById('quiz-result').innerHTML = `<p style="color: var(--primary-color);">${currentLang === 'ar' ? 'لقد حصلت على' : currentLang === 'en' ? 'You got' : currentLang === 'fr' ? 'Vous avez obtenu' : 'Aldığınız puan'} ${quizScore} ${currentLang === 'ar' ? 'من' : currentLang === 'en' ? 'out of' : currentLang === 'fr' ? 'sur' : '/'} ${quizQuestionsTranslations[currentLang].length}</p>`;
+                document.getElementById('quiz-next').style.display = 'none';
+            }
+        });
+
+        // Memory game
+        const memoryGame = document.getElementById('memory-game');
+        const memoryMessage = document.getElementById('memory-message');
+        const memoryReset = document.getElementById('memory-reset');
+        let memoryCards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        const icons = ['solar-panel', 'wind', 'leaf', 'lightbulb'];
+        let cardValues = [...icons, ...icons]; // 4 pairs
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initMemoryGame() {
+            if (!memoryGame) return;
+            memoryGame.innerHTML = '';
+            cardValues = shuffleArray([...icons, ...icons]);
+            memoryCards = [];
+            flippedCards = [];
+            matchedPairs = 0;
+            memoryMessage.textContent = '';
+
+            cardValues.forEach((icon, index) => {
+                const card = document.createElement('div');
+                card.className = 'memory-card';
+                card.dataset.icon = icon;
+                card.dataset.index = index;
+                card.innerHTML = '<i class="fas fa-question"></i>';
+                card.addEventListener('click', () => flipCard(card));
+                memoryGame.appendChild(card);
+                memoryCards.push(card);
+            });
+        }
+
+        function flipCard(card) {
+            if (card.classList.contains('flipped') || card.classList.contains('matched') || flippedCards.length === 2) return;
+
+            card.classList.add('flipped');
+            const icon = card.dataset.icon;
+            card.innerHTML = `<i class="fas fa-${icon}"></i>`;
+            flippedCards.push(card);
+
+            if (flippedCards.length === 2) {
+                checkMatch();
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+            if (card1.dataset.icon === card2.dataset.icon) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+                if (matchedPairs === 4) {
+                    memoryMessage.textContent = currentLang === 'ar' ? '🎉 تهانينا! لقد أكملت اللعبة!' : 
+                                                currentLang === 'en' ? '🎉 Congratulations! You completed the game!' :
+                                                currentLang === 'fr' ? '🎉 Félicitations ! Vous avez terminé le jeu !' :
+                                                '🎉 Tebrikler! Oyunu tamamladınız!';
+                }
+                flippedCards = [];
+            } else {
+                setTimeout(() => {
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    card1.innerHTML = '<i class="fas fa-question"></i>';
+                    card2.innerHTML = '<i class="fas fa-question"></i>';
+                    flippedCards = [];
+                }, 700);
+            }
+        }
+
+        if (memoryReset) {
+            memoryReset.addEventListener('click', initMemoryGame);
+        }
+
+        // Other existing functions (download, preview, survey, scroll, theme, etc.)
+        function previewImage(imageId) {
+            const imgElement = document.getElementById(imageId);
+            const previewModal = document.getElementById('imagePreviewModal');
+            const previewImage = document.getElementById('previewImage');
+            
+            previewImage.src = imgElement.src;
+            previewImage.alt = imgElement.alt;
+            previewModal.style.display = 'flex';
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePreview();
+                }
+            });
+        }
+
+        function closePreview() {
+            const previewModal = document.getElementById('imagePreviewModal');
+            previewModal.style.display = 'none';
+        }
+
+        function downloadImage(imageId) {
+            const imgElement = document.getElementById(imageId);
+            const link = document.createElement('a');
+            link.href = imgElement.src;
+            
+            let fileName = '';
+            if (imageId.includes('poster')) {
+                fileName = `poster-${imageId.replace('poster', '')}.jpg`;
+            } else if (imageId === 'longBrochure') {
+                fileName = 'brochure.jpg';
+            } else {
+                fileName = `${imageId}.jpg`;
+            }
+            
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert(translations[currentLang].download + ' ' + fileName);
+        }
+
+        window.submitSurvey = function() {
+            const surveyForm = document.getElementById('survey-form');
+            const thankYou = document.getElementById('survey-thankyou');
+            if (surveyForm) surveyForm.style.display = 'none';
+            if (thankYou) thankYou.style.display = 'block';
+        };
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            initMemoryGame();
+            loadQuizQuestion(0);
+            animateOnScroll();
+            changeLanguage('ar'); // Set default language
+        });
+    </script>
+</body>
+</html>
